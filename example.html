@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>thompson.js - Demo</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+    .box {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      margin: 10px 0;
+      border-radius: 8px;
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+  <h1>🇭🇷 thompson.js Demo</h1>
+  <div class="box">
+    <h2>DOM Ready Wrapper</h2>
+    <p id="status">Waiting for DOM...</p>
+  </div>
+
+  <script type="module">
+    import za from './thompson.js';
+
+    // The famous DOM ready statement!
+    za.DOM("spremni", () => {
+      const status = document.querySelector("#status");
+      status.textContent = "✅ DOM je spreman! Code is executing...";
+      
+      console.log("DOM ready callback fired!");
+      console.log("Document ready state:", document.readyState);
+    });
+  </script>
+</body>
+</html>
